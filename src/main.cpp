@@ -3,14 +3,13 @@
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-    // Create image - either load from file or create blank
+    // create image - either load from file or create blank
     Image* img;
     if (argc > 1) {
-        // Load PNG from command line argument
+        // this is an argument with what image we put in. if it's blank, white
         std::cout << "Loading image: " << argv[1] << std::endl;
         img = new Image(argv[1]);
     } else {
-        // Create blank canvas
         std::cout << "No image provided. Creating blank canvas." << std::endl;
         img = new Image(800, 600, sf::Color::White);
     }
