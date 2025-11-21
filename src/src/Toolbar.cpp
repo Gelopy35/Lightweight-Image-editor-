@@ -48,8 +48,13 @@ void Toolbar::Filter() {
             ImGui::Separator();
             ImGui::Checkbox("Greyscale", state.greyScale);
             if (*state.greyScale) {
-                // whoever is implementing grayscale functionality, uncomment below once done.
-                // transform->GrayScale();
+                if (!transform.isGrayScaleActive()) {
+                    transform.GrayScale(1.0f); // full grayscale
+                }
+            } else {
+                if (transform.isGrayScaleActive()) {
+                    transform.revertGrayScale();
+                }
             }
 
             ImGui::End();
