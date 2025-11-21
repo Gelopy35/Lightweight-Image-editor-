@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
             &prev_brightness,
             &showFilterMenu
         };
-        Toolbar toolbar(resourceManager, filterState, transform);
+        Toolbar toolbar(resourceManager, filterState, transform, *img);
         toolbar.buildToolbar();
 
 

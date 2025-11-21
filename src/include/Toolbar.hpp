@@ -10,8 +10,8 @@ struct FilterState{
 
 class Toolbar {
 public:
-    Toolbar(ResourceManager& rm, FilterState& st, Transform& tr) 
-        : resourceManager(rm), state(st), transform(tr) {}
+    Toolbar(ResourceManager& rm, FilterState& st, Transform& tr, Image& img) 
+        : resourceManager(rm), state(st), transform(tr), image(img) {}
     void Filter();
     void Draw();
     void Rotate();
@@ -20,4 +20,6 @@ private:
     ResourceManager& resourceManager;
     FilterState& state;
     Transform& transform;
+    Image& image;
+    bool grayScaleApplied = false;
 };

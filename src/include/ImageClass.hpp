@@ -9,6 +9,7 @@ private:
     unsigned int width;
     unsigned int height;
     bool needsUpdate;
+    bool grayscaleApplied = false;
 
 public:
     Image(unsigned int w, unsigned int h, const sf::Color& fillColor = sf::Color::White) 
